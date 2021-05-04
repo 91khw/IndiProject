@@ -77,10 +77,8 @@
 
 		var url = "${pageContext.request.contextPath}/restBoard/getReplyList";
 
-		var paramData = {
-			"bid" : "${boardContent.bid}"
-		};
-
+		var paramData = {"bid" : "${boardContent.bid}"};
+		
 		$.ajax({
 
 					type : 'POST',
@@ -101,9 +99,7 @@
 
 						} else {
 
-							$(result)
-									.each(
-											function() {
+							$(result).each(function() {
 
 												htmls += '<div class="media text-muted pt-3" id="rid' + this.rid + '">';
 
