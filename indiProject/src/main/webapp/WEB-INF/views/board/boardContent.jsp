@@ -26,8 +26,10 @@
 
 
 <script>
+
 	//목록으로 이동 이벤트
-	$(document).on(
+	$(document)
+			.on(
 					'click',
 					'#btnList',
 					function() {
@@ -41,8 +43,7 @@
 
 		var url = "${pageContext.request.contextPath}/board/editForm";
 
-		url = url + "?bid=" + ${boardContent.bid}
-		;
+		url = url + "?bid=" + ${boardContent.bid};
 
 		url = url + "&mode=edit";
 
@@ -65,10 +66,16 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.js">
 
-	
+	//댓글 리스트
 	$(document).ready(function() {
+	
+		showReplyList();
+	
+	});
+	
+	function showReplyList(){ 
 
-		var url = "${pageContext.request.contextPath}/restBoard/getReqlyList";
+		var url = "${pageContext.request.contextPath}/restBoard/getReplyList";
 
 		var paramData = {
 			"bid" : "${boardContent.bid}"
